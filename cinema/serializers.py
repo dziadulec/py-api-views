@@ -23,7 +23,8 @@ class CinemaHallSerializer(serializers.ModelSerializer):
         fields = "__all__"
         read_only_fields = ("id",)
 
-class MovieSerializer(serializers.Serializer):
+
+class MovieSerializer(serializers.ModelSerializer):
     actors = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=Actor.objects.all(),
@@ -39,4 +40,3 @@ class MovieSerializer(serializers.Serializer):
         model = Movie
         fields = "__all__"
         read_only_fields = ("id",)
-
